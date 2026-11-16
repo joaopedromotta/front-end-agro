@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionários | Agro Guard</title>
+
+    <script>
+        if (new URLSearchParams(window.location.search).get("embed") === "1") {
+            document.documentElement.classList.add("embedded");
+        }
+    </script>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/global.css">
+</head>
+<body data-resource="employees">
+    <main class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-logo">AG</div>
+            <nav class="sidebar-nav" aria-label="Seções">
+                <a class="sidebar-btn active" href="../index.html" aria-label="Voltar ao painel">
+                    <img src="./icons/Grupio.svg" alt="">
+                </a>
+            </nav>
+        </aside>
+
+        <header class="topbar">
+            <h1 class="page-title">Funcionários</h1>
+            <div class="topbar-actions">
+                <input class="search-input" type="search" placeholder="Buscar por nome, e-mail ou CPF" aria-label="Buscar funcionários">
+            </div>
+        </header>
+
+        <section class="content">
+            <div class="table-header">
+                <div>
+                    <span class="table-description">Funcionários cadastrados na operação</span>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>CPF</th>
+                        </tr>
+                    </thead>
+                    <tbody id="record-table-body">
+                        <tr><td colspan="4">Carregando funcionários...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

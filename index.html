@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#123d49">
+    <title>Início | Agro Guard</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/dashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar" aria-label="Navegação principal">
+            <a class="brand" href="./index.html" aria-label="Agro Guard - início">
+                <span class="brand-mark" aria-hidden="true">AG</span>
+                <span class="brand-name">Agro<span>Guard</span></span>
+            </a>
+
+            <p class="nav-caption">MENU</p>
+            <nav class="navigation">
+                <a class="nav-link is-active" href="./index.html" data-view="home" aria-current="page">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/></svg>
+                    <span>Visão geral</span>
+                </a>
+                <a class="nav-link" href="./usuario.html" data-view="users" data-frame-src="./usuario.html?embed=1">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm10 10v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <span>Usuários</span>
+                </a>
+                <a class="nav-link" href="./propriedade.html" data-view="properties" data-frame-src="./propriedade.html?embed=1">
+                    <img src="./icons/Vila.svg"></img>
+                    <span>Propriedades</span>
+                </a>
+                <a class="nav-link" href="./equipamento.html" data-view="equipments" data-frame-src="./equipamento.html?embed=1">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14l-1.5-6h-11L5 17Zm2-6 1-4h8l1 4M8 17v2m8-2v2M4 17h16"/></svg>
+                    <span>Equipamentos</span>
+                </a>
+                <a class="nav-link" href="./ocorrencia.html" data-view="occurrences" data-frame-src="./ocorrencia.html?embed=1">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="M12 8v4m0 4h.01"/></svg>
+                    <span>Ocorrências</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-note">
+                <span class="note-icon" aria-hidden="true">✦</span>
+                <p>Gestão rural<br><strong>mais simples</strong></p>
+            </div>
+            <span class="sidebar-version">AGRO GUARD · 2026</span>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div class="breadcrumb"><span>Agro Guard</span><span aria-hidden="true">/</span><strong>Visão geral</strong></div>
+                <div class="account">
+                    <span class="account-avatar" aria-hidden="true">AG</span>
+                    <span class="account-label" id="account-label">Área de gestão</span>
+                    <button class="account-logout" id="logout-button" type="button">Sair</button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="home-view" id="home-view">
+                <section class="welcome" aria-labelledby="welcome-title">
+                    <div class="welcome-copy">
+                        <span class="eyebrow"><span class="status-dot"></span> SEU PAINEL DE GESTÃO</span>
+                        <h1 id="welcome-title">Tudo da sua operação,<br><em>em um só lugar.</em></h1>
+                        <p>Acesse as áreas do Agro Guard e acompanhe os recursos disponíveis para organizar sua gestão rural.</p>
+                    </div>
+                    <div class="welcome-art" aria-hidden="true">
+                        <div class="sun"></div>
+                        <div class="field field-back"></div>
+                        <div class="field field-front"></div>
+                        <svg class="plant plant-one" viewBox="0 0 48 78"><path d="M24 76V35M24 51C9 50 5 41 6 31c11 0 18 7 18 20ZM24 41c1-14 9-23 20-23 1 13-7 22-20 23ZM24 65C11 63 8 56 9 49c9 1 14 6 15 16Z"/></svg>
+                        <svg class="plant plant-two" viewBox="0 0 48 78"><path d="M24 76V35M24 51C9 50 5 41 6 31c11 0 18 7 18 20ZM24 41c1-14 9-23 20-23 1 13-7 22-20 23ZM24 65C11 63 8 56 9 49c9 1 14 6 15 16Z"/></svg>
+                    </div>
+                </section>
+
+                <section class="modules-section" aria-labelledby="modules-title">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">CENTRAL DE ACESSO</span>
+                            <h2 id="modules-title">O que você pode gerenciar</h2>
+                            <p>Conheça as áreas disponíveis no sistema.</p>
+                        </div>
+                        <span class="module-count"><strong>04</strong> módulos</span>
+                    </div>
+
+                    <div class="module-grid">
+                        <a class="module-card card-properties" href="./propriedade.html" data-view="properties" data-frame-src="./propriedade.html?embed=1">
+                            <div class="card-top">
+                                <span class="module-icon icon-properties" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V9l7-5 7 5v11M9 20v-6h6v6M8 10h.01M12 10h.01M16 10h.01"/></svg>
+                                </span>
+                                <span class="card-number">01</span>
+                            </div>
+                            <h3>Propriedades</h3>
+                            <p>Cadastre e consulte as propriedades rurais vinculadas à operação.</p>
+                            <div class="card-footer"><span class="access-indicator"></span> Gestão de propriedades</div>
+                        </a>
+
+                        <a class="module-card card-equipment" href="./equipamento.html" data-view="equipments" data-frame-src="./equipamento.html?embed=1">
+                            <div class="card-top">
+                                <span class="module-icon icon-equipment" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M5 17h14l-1.5-6h-11L5 17Zm2-6 1-4h8l1 4M8 17v2m8-2v2M4 17h16M8 7l1-2h6l1 2M8 13h.01M16 13h.01"/></svg>
+                                </span>
+                                <span class="card-number">02</span>
+                            </div>
+                            <h3>Equipamentos</h3>
+                            <p>Organize os equipamentos e acompanhe sua associação às propriedades.</p>
+                            <div class="card-footer"><span class="access-indicator"></span> Controle de equipamentos</div>
+                        </a>
+
+                        <a class="module-card card-occurrences" href="./ocorrencia.html" data-view="occurrences" data-frame-src="./ocorrencia.html?embed=1">
+                            <div class="card-top">
+                                <span class="module-icon icon-occurrences" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="M12 8v4m0 4h.01"/></svg>
+                                </span>
+                                <span class="card-number">03</span>
+                            </div>
+                            <h3>Ocorrências</h3>
+                            <p>Registre eventos da operação e acompanhe as informações reportadas.</p>
+                            <div class="card-footer"><span class="access-indicator"></span> Acompanhamento de ocorrências</div>
+                        </a>
+
+                        <a class="module-card card-users" href="./usuario.html" data-view="users" data-frame-src="./usuario.html?embed=1">
+                            <div class="card-top">
+                                <span class="module-icon icon-users" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm10 10v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                </span>
+                                <span class="card-number">04</span>
+                            </div>
+                            <h3>Usuários</h3>
+                            <p>Cadastre, consulte e administre os usuários da operação.</p>
+                            <div class="card-footer"><span class="access-indicator"></span> Gestão de pessoas</div>
+                        </a>
+
+                    </div>
+                </section>
+
+                <footer class="page-footer">
+                    <span class="footer-mark" aria-hidden="true">AG</span>
+                    <span>Agro Guard <span class="footer-separator">·</span> Gestão que acompanha o campo.</span>
+                    <span class="access-note">Os acessos podem variar conforme o perfil da sua conta.</span>
+                </footer>
+                </div>
+                <div class="embedded-view" id="workspace-view" hidden>
+                    <iframe
+                        title="Área de gerenciamento"
+                    ></iframe>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocorrências | Agro Guard</title>
+    <script>
+        if (new URLSearchParams(window.location.search).get("embed") === "1") {
+            document.documentElement.classList.add("embedded");
+        }
+    </script>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/global.css">
+</head>
+<body data-resource="occurrences">
+    <main class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-logo">AG</div>
+            <nav class="sidebar-nav" aria-label="Seções">
+                <a class="sidebar-btn active" href="../index.html" aria-label="Voltar ao painel">
+                    <img src="./icons/Grupio.svg" alt="">
+                </a>
+            </nav>
+        </aside>
+
+        <header class="topbar">
+            <h1 class="page-title">Ocorrências</h1>
+            <div class="topbar-actions">
+                <select class="search-input" id="property-filter" aria-label="Filtrar por propriedade">
+                    <option value="">Todas as propriedades</option>
+                </select>
+                <input class="search-input" type="search" placeholder="Buscar ocorrências" aria-label="Buscar ocorrências">
+                <button class="btn-primary" id="open-form" type="button">+ Nova ocorrência</button>
+            </div>
+        </header>
+
+        <section class="content">
+            <div class="table-header">
+                <div>
+                    <span class="table-description">Ocorrências registradas na operação</span>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Tipo</th>
+                            <th>Gravidade</th>
+                            <th>Status</th>
+                            <th>Data</th>
+                            <th>Propriedade</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="record-table-body">
+                        <tr><td colspan="7">Carregando ocorrências...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="secao_publicar" id="form-dialog" aria-label="Cadastro de ocorrência" hidden>
+            <div class="container-btn-fechar">
+                <button id="close-form" type="button" aria-label="Fechar cadastro">
+                    <img src="./icons/close.svg" alt="">
+                </button>
+            </div>
+            <form class="formula" id="record-form">
+                <h2 class="form-title" id="form-title">Cadastrar ocorrência</h2>
+                <input type="hidden" name="id" id="record-id">
+                <input type="text" name="title" placeholder="Título da ocorrência" required>
+                <textarea name="description" placeholder="Descrição" rows="4"></textarea>
+                <select name="type" required>
+                    <option value="">Selecione o tipo</option>
+                    <option value="ROUBO">Roubo</option>
+                    <option value="FURTO">Furto</option>
+                    <option value="INVASAO">Invasão</option>
+                    <option value="VANDALISMO">Vandalismo</option>
+                    <option value="INCENDIO">Incêndio</option>
+                    <option value="FALHA_DE_EQUIPAMENTO">Falha de equipamento</option>
+                    <option value="ATIVIDADE_SUSPEITA">Atividade suspeita</option>
+                    <option value="DANOS_A_PROPRIEDADE">Danos à propriedade</option>
+                    <option value="OUTRO">Outro</option>
+                </select>
+                <select name="gravity" required>
+                    <option value="">Selecione a gravidade</option>
+                    <option value="BAIXA">Baixa</option>
+                    <option value="MEDIA">Média</option>
+                    <option value="ALTA">Alta</option>
+                    <option value="CRITICA">Crítica</option>
+                </select>
+                <select name="status" required>
+                    <option value="">Selecione o status</option>
+                    <option value="ABERTA">Aberta</option>
+                    <option value="EM_ANALISE">Em análise</option>
+                    <option value="EM_ANDAMENTO">Em andamento</option>
+                    <option value="RESOLVIDA">Resolvida</option>
+                    <option value="CANCELADA">Cancelada</option>
+                </select>
+                <select name="propertyId" id="propertyId" required>
+                    <option value="">Selecione a propriedade</option>
+                </select>
+                <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+                <button type="submit" id="save-button">Cadastrar ocorrência</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

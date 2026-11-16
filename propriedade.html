@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedades | Agro Guard</title>
+
+    <script>
+        if (new URLSearchParams(window.location.search).get("embed") === "1") {
+            document.documentElement.classList.add("embedded");
+        }
+    </script>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/global.css">
+</head>
+<body data-resource="properties">
+    <main class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-logo">AG</div>
+            <nav class="sidebar-nav" aria-label="Seções">
+                <a class="sidebar-btn active" href="../index.html" aria-label="Voltar ao painel">
+                    <img src="./icons/Grupio.svg" alt="">
+                </a>
+            </nav>
+        </aside>
+
+        <header class="topbar">
+            <h1 class="page-title">Propriedades</h1>
+            <div class="topbar-actions">
+                <input class="search-input" type="search" placeholder="Buscar por nome ou endereço" aria-label="Buscar propriedades">
+                <button class="btn-primary" id="open-form" type="button">+ Nova propriedade</button>
+            </div>
+        </header>
+
+        <section class="content">
+            <div class="table-header">
+                <span class="table-description">Propriedades cadastradas na operação</span>
+            </div>
+            <div class="table-wrapper">
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Endereço</th>
+                            <th>Área (ha)</th>
+                            <th>ID do proprietário</th>
+                            <th>Equipe vinculada</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="record-table-body">
+                        <tr><td colspan="7">Carregando propriedades...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="secao_publicar" id="form-dialog" aria-label="Cadastro de propriedade" hidden>
+            <div class="container-btn-fechar">
+                <button id="close-form" type="button" aria-label="Fechar cadastro">
+                    <img src="./icons/close.svg" alt="">
+                </button>
+            </div>
+            <form class="formula" id="record-form">
+                <h2 class="form-title" id="form-title">Cadastrar propriedade</h2>
+                <input type="hidden" name="id" id="record-id">
+                <input type="text" name="name" placeholder="Nome da propriedade" required>
+                <input type="text" name="address" placeholder="Endereço" autocomplete="street-address" required>
+                <input type="number" name="hectares" placeholder="Área em hectares" min="0.01" step="any" required>
+                <select name="ownerId" id="ownerId" required>
+                    <option value="">Selecione o proprietário</option>
+                </select>
+                <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+                <button type="submit" id="save-button">Cadastrar propriedade</button>
+            </form>
+        </section>
+
+        <section class="secao_publicar" id="team-dialog" aria-label="Gerenciar equipe da propriedade" hidden>
+            <div class="container-btn-fechar">
+                <button id="close-team-form" type="button" aria-label="Fechar vínculo">
+                    <img src="./icons/close.svg" alt="">
+                </button>
+            </div>
+            <form class="formula" id="team-form">
+                <h2 class="form-title">Equipe da propriedade</h2>
+                <input type="hidden" name="propertyId" id="team-property-id">
+                <select name="userId" id="team-user-id" required>
+                    <option value="">Selecione um funcionário</option>
+                </select>
+                <select name="operation" id="team-operation" required>
+                    <option value="add">Adicionar à equipe</option>
+                    <option value="remove">Remover da equipe</option>
+                </select>
+                <p class="form-message" id="team-message" role="status" aria-live="polite"></p>
+                <button type="submit">Salvar equipe</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
