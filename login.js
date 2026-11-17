@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:8080/v1";
+const API_BASE_URL = "https://agro-guard-kxd6.onrender.com";
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("formulario-login");
