@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://agro-guard-kxd6.onrender.com";
+const API_BASE_URL = "https://agro-guard-kxd6.onrender.com/v1";
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("formulario-login");
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const formData = new FormData(form);
 
         try {
-            const response = await fetch(`${API_BASE_URL}/v1/auth/login`, {
+            const response = await fetch(`${API_BASE_URL}/auth/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
