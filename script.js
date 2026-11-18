@@ -132,7 +132,7 @@ const resourceConfigs = {
             type: data.get("type"),
             gravity: data.get("gravity"),
             status: data.get("status"),
-            propertyId: data.get("name")
+            propertyId: Number(data.get("propertyId"))
         }),
         formTitle: "ocorrência"
     }
