@@ -1,15 +1,13 @@
-const API_BASE_URL = "https://agro-guard-kxd6.onrender.com/v1";
+const API_BASE_URL = "http://localhost:8080/v1";
 
 const equipmentTypeLabels = {
     CAMERA: "Câmera",
     SENSOR_MOVIMENTO: "Sensor de movimento",
-    SENSOR_PRESENCA: "Sensor de presença",
-    SENSOR_ABERTURA: "Sensor de abertura",
     ALARME: "Alarme",
     CERCA_ELETRICA: "Cerca elétrica",
-    RASTREADOR: "Rastreador",
     DRONE: "Drone",
     RADIO_COMUNICADOR: "Rádio comunicador",
+    MAQUINARIO_GERAL: "Maquinário geral",
     OUTRO: "Outro"
 };
 
@@ -23,13 +21,13 @@ const equipmentStatusLabels = {
 
 const occurrenceTypeLabels = {
     ROUBO: "Roubo",
-    FURTO: "Furto",
     INVASAO: "Invasão",
     VANDALISMO: "Vandalismo",
     INCENDIO: "Incêndio",
     FALHA_DE_EQUIPAMENTO: "Falha de equipamento",
     ATIVIDADE_SUSPEITA: "Atividade suspeita",
     DANOS_A_PROPRIEDADE: "Danos à propriedade",
+    ANIMAL: "Animal",
     OUTRO: "Outro"
 };
 
